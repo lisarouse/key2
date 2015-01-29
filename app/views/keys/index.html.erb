@@ -1,105 +1,34 @@
-<div class="row">
-  <div class="large-3 large-centered columns alignCenterNoPadding">
-    <h1>Listing keys</h1>
-  </div>
-</div>
+<h1>Listing keys</h1>
 
-<div class="row">
-  <div class="large-9 columns">
-    <div class="panel radius">
-      <div class="panel callout radius">
-        <%= search_form_for @q, id: 'fKey_filter', remote: true do |f| %>
-          <div class="hide">
-            <div class="small-2 column">
-              <%= f.submit class: 'button tiny radius' %>
-            </div>
-          </div>
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Description</th>
+      <th>Number</th>
+      <th>Checkout</th>
+      <th>Checkin</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-          <div class="small-12 columns">
-            <div class="row collapse">
-              <div class="small-1 column">
-                <%= f.label(:company_start, 'Company:', class: 'right inline') %>
-              </div>
-              <div class="small-2 left columns">
-                <%f.search_field :company_start %>
-              </div>
-
-              <div class="small-1 columns">
-                <%=f.label(:description_start, 'Description:', class: 'right inline') %>
-              </div>
-              <div class="small-2 left columns">
-                <%f.search_field :description_start %>
-              </div>
-
-              <div class="small-1 columns">
-                <%= f.label(:number_start, "Key #:", class: "right inline") %>
-              </div>
-              <div class="small-2 left columns">
-                <%f.search_field :number_start %>
-              </div>
-            </div>
-
-            <div class="row collapse">
-              <div class="small-1 columns">
-                <%= f.label(:checkout_start, "Checkout Date:", class: 'right inline') %>
-              </div>
-              <div class="small-2 left columns">
-                <%f.search_field :checkout_start %>
-              </div>
-
-              <div class="small-1 columns">
-                <%= f.label(:checkin_start, "Checkin Date:", class: 'right inline') %>
-              </div>
-              <div class="small-2 left columns">
-                <%f.search_field :checkin_start %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-<div class="row">
-  <div class="small-12 small-offset-1 columns">
-    <table>
-      <thead>
-        <tr class="tableHeader">
-          <th><%= sort_link(@q, :company, "Company") %></th>
-          <th><%= sort_link(@q, :description, "Description") %></th>
-          <th><%= sort_link(@q, :number, "Number") %></th>
-          <th><%= sort_link(@q, :checkout, "Checkout") %></th>
-          <th><%= sort_link(@q, :checkin, "Checkin") %></th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @keys.each do |key| %>
-          <tr>
-            <td><%= key.company %></td>
-            <td><%= key.description %></td>
-            <td><%= key.number %></td>
-            <td><%= key.checkout %></td>
-            <td><%= key.checkin %></td>
-            <td><%= link_to 'Show', key %></td>
-            <td><%= link_to 'Edit', edit_key_path(key) %></td>
-            <td><%= link_to 'Destroy', key, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-        <tr>
-          <td colspan="5" class="tableFooter">
-            <%= paginate @keys %>
-          </td>
-          <td colspan="4" class="tableFooter">
-            <%= @searchNumber %> from <%= @totNumber %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-</div>
-</div>
+  <tbody>
+    <% @keys.each do |key| %>
+      <tr>
+        <td><%= key.company %></td>
+        <td><%= key.description %></td>
+        <td><%= key.number %></td>
+        <td><%= key.checkout %></td>
+        <td><%= key.checkin %></td>
+        <td><%= link_to 'Show', key %></td>
+        <td><%= link_to 'Edit', edit_key_path(key) %></td>
+        <td><%= link_to 'Destroy', key, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <br>
 

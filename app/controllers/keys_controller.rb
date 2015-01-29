@@ -4,12 +4,7 @@ class KeysController < ApplicationController
   # GET /keys
   # GET /keys.json
   def index
-    @q = Key.search(params[:q])
-    @keys = @q.result.page(params[:page]).per(5)
-
-    @totNumber = Key.all.count
-    @searchNumber = @q.result.count
-    
+    @keys = Key.all
   end
 
   # GET /keys/1
