@@ -49,10 +49,19 @@
     <div id="divTable">
       <%= render('table') %>
     </div>
+    <div class="large-3 columns">
+      <div class="panel radius">
+        <div class="large-centered">
+          <%= link_to 'New Key', new_key_path, class: "button tiny radius", id: "bNew", remote: true%>
+        </div>
+        <div id="divForm">
+        </div>
+      </div>
+    </div>
 </div>
 </div>
 </div>
 
 <br>
 
-<%= link_to 'New Key', new_key_path %>
+
