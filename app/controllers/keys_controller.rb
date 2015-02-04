@@ -4,7 +4,19 @@ class KeysController < ApplicationController
   # GET /keys
   # GET /keys.json
   def index
-    @keys = Key.all
+    @q = Key.search(params[:q])
+    @keys = @q.result.page(params[:page]).per(15)
+
+    @totNumber = Key.all.count
+    @searchNumber = @q.result.count
+
+    #@keys = Key.all
+
+    respond_to do |format|
+      format.html { render action: 'index' }
+      format.js
+    end
+
   end
 
   # GET /keys/1
@@ -15,6 +27,7 @@ class KeysController < ApplicationController
   # GET /keys/new
   def new
     @key = Key.new
+    
   end
 
   # GET /keys/1/edit
