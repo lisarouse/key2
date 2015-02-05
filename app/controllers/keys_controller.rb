@@ -27,11 +27,20 @@ class KeysController < ApplicationController
   # GET /keys/new
   def new
     @key = Key.new
+
+    respond_to do |format|
+      format.html {render action: 'new'}
+      format.js {render "new_edit"}
+    end
     
   end
 
   # GET /keys/1/edit
   def edit
+    respond_to do |format|
+      format.html {render action: 'edit'}
+      format.js {render "new_edit"}
+    end
   end
 
   # POST /keys
