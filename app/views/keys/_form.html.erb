@@ -14,7 +14,8 @@
   <div class="panel callout radius">
     <div class="field">
       <%= f.label :company %><br>
-      <%= f.text_field :company %>
+      <%#= f.text_field :company %>
+      <%= f.select(:company, grouped_options_for_select(@grouped_options), prompt: 'Choose Company') %>
     </div>
     <div class="field">
       <%= f.label :description %><br>
@@ -26,15 +27,13 @@
     </div>
     <div class="field">
       <%= f.label :checkout %><br>
-      <%= f.date_select :checkout %>
+      <%= f.date_field :checkout %>
     </div>
     <div class="field">
       <%= f.label :checkin %><br>
-      <%= f.date_select :checkin %>
+      <%= f.date_field :checkin %>
     </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+    
   </div>
 
   <div class="row">

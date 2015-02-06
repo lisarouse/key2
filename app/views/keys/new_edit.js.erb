@@ -1,3 +1,8 @@
 
 $('#divForm').html("<%= j render('form') %> ");
 
+$('#bNew').hide();
+$('#bCancel').click(function() {
+	$('#divForm').html("");
+	$('#bNew').show();
+});

@@ -12,6 +12,8 @@ class KeysController < ApplicationController
 
     #@keys = Key.all
 
+    @grouped_options = ForSelect.GroupedSelect('9999', 'key', ForSelect)
+
     respond_to do |format|
       format.html { render action: 'index' }
       format.js
@@ -28,6 +30,8 @@ class KeysController < ApplicationController
   def new
     @key = Key.new
 
+    @grouped_options = ForSelect.GroupedSelect('9999', 'key', ForSelect)
+
     respond_to do |format|
       format.html {render action: 'new'}
       format.js {render "new_edit"}
@@ -37,6 +41,8 @@ class KeysController < ApplicationController
 
   # GET /keys/1/edit
   def edit
+    @grouped_options = ForSelect.GroupedSelect('9999', 'key', ForSelect)
+
     respond_to do |format|
       format.html {render action: 'edit'}
       format.js {render "new_edit"}

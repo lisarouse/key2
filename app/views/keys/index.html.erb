@@ -7,61 +7,60 @@
 <div class="row">
   <div class="large-9 columns">
     <div class="panel radius">
-      <div class="panel callout radius">
-        <%= search_form_for @q, id: 'fKey_filter', remote: true do |f| %>
-          <div class="row collapse">
-              <div class="hide">
-                <div class="small-2 columns">
-                  <%= f.submit class: 'button tiny radius' %>
-                </div>
-              </div>
-
-              <div class="small-12 columns">
-                  <div class="row collapse">
-                    <div class="small-1 columns">
-                      <%= f.label(:company_start, 'Company:', class: "right inline") %>
-                    </div>
-                    <div class="small-2 left columns">
-                      <%= f.search_field :company_start %>
-                    </div>
-
-                    <div class="small-2 columns">
-                      <%= f.label(:description_start, 'Description:', class: "right inline") %>
-                    </div>
-                    <div class="small-2 left columns">
-                      <%= f.search_field :description_start %>
-                    </div>
-
-                    <div class="small-2 columns">
-                      <%= f.label(:number_start, 'Number:', class: "right inline") %>
-                    </div>
-                    <div class="small-2 left columns">
-                      <%= f.search_field :number_start %>
-                    </div>
+        <div class="panel callout radius">
+          <%= search_form_for @q, id: 'fKey_filter', remote: true do |f| %>
+            <div class="row collapse">
+                <div class="hide">
+                  <div class="small-2 columns">
+                    <%= f.submit class: 'button tiny radius' %>
                   </div>
+                </div>
 
-                  
-              </div>
-          </div>
+                <div class="small-12 columns">
+                    <div class="row collapse">
+                      <div class="small-1 columns">
+                        <%= f.label(:company_start, 'Company:', class: "right inline") %>
+                      </div>
+                      <div class="small-2 left columns">
+                        <%= f.search_field :company_start %>
+                      </div>
 
-        <% end %>
-     </div> 
-    <div id="divTable">
-      <%= render('table') %>
-    </div>
-    <div class="large-3 columns">
-      <div class="panel radius">
-        <div class="large-centered">
-          <%= link_to 'New Key', new_key_path, class: "button tiny radius", id: "bNew", remote: true%>
-        </div>
-        <div id="divForm">
-        </div>
+                      <div class="small-2 columns">
+                        <%= f.label(:description_start, 'Description:', class: "right inline") %>
+                      </div>
+                      <div class="small-2 left columns">
+                        <%= f.search_field :description_start %>
+                      </div>
+
+                      <div class="small-2 columns">
+                        <%= f.label(:number_start, 'Number:', class: "right inline") %>
+                      </div>
+                      <div class="small-3 left columns">
+                        <%= f.search_field :number_start %>
+                      </div>
+                    </div>                
+                </div>
+            </div>
+          <% end %>
+        </div> 
+      <div id="divTable">
+        <%= render('table') %>
       </div>
     </div>
-</div>
-</div>
+   </div> 
+   
+      <div class="large-3 columns">
+        <div class="panel radius">
+          <div class="large-centered">
+            <%= link_to 'New Key', new_key_path, class: "button tiny radius", id: "bNew", remote: true %>
+          </div>
+          <div id="divForm">
+          </div>
+        </div>
+      </div>
+    
 </div>
 
-<br>
+
 
 
