@@ -19,10 +19,10 @@
                 <div class="small-12 columns">
                     <div class="row collapse">
                       <div class="small-1 columns">
-                        <%= f.label(:company_start, 'Company:', class: "right inline") %>
+                        <%= f.label(:company_eq, 'Company:', class: "right inline") %>
                       </div>
                       <div class="small-2 left columns">
-                        <%= f.select(:company_start, grouped_options_for_select(@grouped_options), prompt: 'Choose Company') %>
+                        <%= f.select(:company_eq, grouped_options_for_select(@grouped_options), prompt: 'Choose Company') %>
                         <%#= f.search_field :company_start %>
                       </div>
 
@@ -39,7 +39,23 @@
                       <div class="small-3 left columns">
                         <%= f.search_field :number_start %>
                       </div>
-                    </div>                
+                    </div> 
+
+                    <div class="row collapse">
+                      <div class="small-1 columns">
+                        <%= f.label(:checkout_gteq, "Checkout After:", class: "right inline") %>
+                      </div>
+                      <div class="small-3 left columns">
+                        <%= f.date_field :checkout_gteq %>
+                      </div>
+                      <div class="small-1 columns">
+                        <%= f.label(:checkin_gteq, "Checkin After:", class: "right inline") %>
+                      </div>
+                      <div class="small-3 left columns">
+                        <%= f.date_field :checkin_gteq %>
+                      </div>
+                    </div>
+
                 </div>
             </div>
           <% end %>
