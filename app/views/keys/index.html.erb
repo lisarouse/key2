@@ -22,7 +22,8 @@
                         <%= f.label(:company_start, 'Company:', class: "right inline") %>
                       </div>
                       <div class="small-2 left columns">
-                        <%= f.search_field :company_start %>
+                        <%= f.select(:company_start, grouped_options_for_select(@grouped_options), prompt: 'Choose Company') %>
+                        <%#= f.search_field :company_start %>
                       </div>
 
                       <div class="small-2 columns">

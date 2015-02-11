@@ -57,6 +57,7 @@ class KeysController < ApplicationController
     respond_to do |format|
       if @key.save
         format.html { redirect_to @key, notice: 'Key was successfully created.' }
+        format.js {render "update_create"}
         format.json { render action: 'show', status: :created, location: @key }
       else
         format.html { render action: 'new' }
@@ -71,6 +72,7 @@ class KeysController < ApplicationController
     respond_to do |format|
       if @key.update(key_params)
         format.html { redirect_to @key, notice: 'Key was successfully updated.' }
+        format.js {render "update_create"}
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
